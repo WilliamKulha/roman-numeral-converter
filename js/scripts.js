@@ -67,11 +67,11 @@ let convertToRomanNumeral = function(arrayMaxLength4) {
   //Convert the Thousands column
   let thousandsArray = []
   let thousandsColumn = arrayMaxLength4.pop();
-  for (let count = hundredsColumn; count > 0; count -= 1) {
-    thousandsArray.splice(0, 0, 'M');
-  }
+    for (let count = thousandsColumn; count > 0; count -= 1) {
+        thousandsArray.splice(0, 0, 'M');
+    }
   convertedArray.push(thousandsArray.join(""));
-  console.log(convertedArray);
+  return(convertedArray);
 }
 
 //User Logic
@@ -85,7 +85,10 @@ $(document).ready(function() {
       $('.error_here').text(tooBig);
     } else {
       let inputAsArray = userInput.split("").map(Number);
-      convertToRomanNumeral(inputAsArray);
+      let results = convertToRomanNumeral(inputAsArray);
+      let reversed = results.reverse();
+      let romanNumeral = reversed.join('')
+      $('.result_here').text('We can represent the number ' + userInput + ' as ' + romanNumeral + ' in Roman Numerals.')
     }
   });
 });

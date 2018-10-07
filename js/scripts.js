@@ -10,10 +10,21 @@ let convertToRomanNumeral = function(arrayMaxLength4) {
   //Convert the Ones Column
   let onesArray = []
   let onesColumn = arrayMaxLength4.pop();
-  for (let count = onesColumn; count > 0; count -= 1) {
-    onesArray.splice(0, 0, 'I');
+  if (onesColumn < 4) {
+    for (let count = onesColumn; count > 0; count -= 1) {
+      onesArray.splice(0, 0, 'I');
+    }
+  } else if (onesColumn === 4) {
+    onesArray.splice(0, 0, 'IV');
+  } else if (onesColumn >= 5 && onesColumn < 9) {
+    onesArray.splice(0, 0, 'V');
+    for (let count = onesColumn - 5; count > 0; count -= 1) {
+      onesArray.splice(1, 0, 'I')
+    }
+  } else if (onesColumn === 9) {
+    onesArray.splice(0, 0, 'IX');
   }
-  convertedArray.push(onesArray.join(""));
+  convertedArray.push(onesArray.join(''));
 
   //Convert the Tens Column
   let tensArray = []

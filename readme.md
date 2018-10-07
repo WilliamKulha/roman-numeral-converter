@@ -14,7 +14,7 @@ _This is a webpage that I made to practice BDD with learnhowtoprogram.com. It ta
 **Program Gathers User Input** | User input: '84' | Output: '84' |
 **Program Makes an Array from Input and Coverts strings to Numbers** | User input: '84' | Output: [8, 4] |
 **Program evaluates the last index of the array, the singles column, and pushes the conversion to a new array** | Input: [8, 4] | Output: ['IV'] |
-**Program evaluates the second to last index of the array, the tens column, and pushes the conversion to the previously created array** | Input: [8, 4] | Output: ['IV', 'LXXXIV']|
+**Program evaluates the second to last index of the array, the tens column, and pushes the conversion to the previously created array** | Input: [8, 4] | Output: ['IV', 'LXXX']|
 **Program evaluates for the hundreds and thousands columns in they are present** | Input: [1, 2, 3, 4] | Output: ['IV', 'XXX', 'CC', 'M'] |
 **Program reverses the array so that the numbers are displayed in their proper position** | Input: ['IV', 'XXX', 'CC', 'M'] | Output: ['M', 'CC', 'XXX', 'IV'] |
 **Program joins the array and displays it on the page** | Input: ['M', 'CC', 'XXX', 'IV'] | Output: 'MCCXXXIV' |

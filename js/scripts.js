@@ -59,6 +59,8 @@ let convertToRomanNumeral = function(arrayMaxLength4) {
     for (let count = hundredsColumn - 5; count > 0; count -= 1){
       hundredsArray.splice(1, 0, 'C')
     }
+  } else if (hundredsColumn === 9) {
+    hundredsArray.splice(0, 0, 'CM');
   }
   convertedArray.push(hundredsArray.join(""));
 

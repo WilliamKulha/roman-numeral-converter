@@ -1,10 +1,20 @@
 //Business Logic
 
 //Error Messages
-let nanError = 'Please enter a number'
-let tooBig = 'Please enter a number smaller than 4000'
+const nanError = 'Please enter a number'
+const tooBig = 'Please enter a number smaller than 4000'
 
-
+//Function for Conversion
+let convertToRomanNumeral = function(arrayMaxLength4) {
+  let convertedArray = []
+  let onesArray = []
+  let onesColumn = arrayMaxLength4.pop();
+  for (let count = onesColumn; count >= 0; count -= 1) {
+    onesArray.splice(0, 0, 'I')
+  }
+  convertedArray.push(onesArray.join(""));
+  console.log(convertedArray);
+}
 
 //User Logic
 $(document).ready(function() {
@@ -17,7 +27,7 @@ $(document).ready(function() {
       $('.error_here').text(tooBig);
     } else {
       let inputAsArray = userInput.split("").map(Number);
-      console.log(typeof(inputAsArray[2]));
+      convertToRomanNumeral(inputAsArray);
     }
   });
 });

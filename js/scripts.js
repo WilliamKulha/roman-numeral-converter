@@ -35,11 +35,13 @@ let convertToRomanNumeral = function(arrayMaxLength4) {
     }
   } else if (tensColumn === 4) {
     tensArray.splice(0, 0, 'XL')
-  } else if (tensColumn >= 5 && onesColumn < 9) {
+  } else if (tensColumn >= 5 && tensColumn < 9) {
     tensArray.splice(0, 0, 'L')
     for (let count = tensColumn - 5; count > 0; count -= 1) {
       tensArray.splice(1, 0, 'X');
     }
+  } else if (tensColumn === 9) {
+    tensArray.splice(1, 0, 'XC')
   }
   convertedArray.push(tensArray.join(""));
 
@@ -49,8 +51,14 @@ let convertToRomanNumeral = function(arrayMaxLength4) {
   if (hundredsColumn < 4) {
     for (let count = hundredsColumn; count > 0; count -= 1) {
       hundredsArray.splice(0, 0, 'C');
+    }
   } else if (hundredsColumn === 4) {
     hundredsArray.splice(0, 0, 'CD');
+  } else if (hundredsColumn >= 5 && hundredsColumn < 9) {
+    hundredsArray.splice(0, 0, 'D');
+    for (let count = hundredsColumn - 5; count > 0; count -= 1){
+      hundredsArray.splice(1, 0, 'C')
+    }
   }
   convertedArray.push(hundredsArray.join(""));
 

@@ -1,5 +1,8 @@
+//Business Logic
+
 //Error Messages
 let nanError = 'Please enter a number'
+let tooBig = 'Please enter a number smaller than 4000'
 
 //User Logic
 $(document).ready(function() {
@@ -8,6 +11,8 @@ $(document).ready(function() {
     let userInput = $('#user_input').val();
     if (isNaN(userInput) === true) {
       $('.error_here').text(nanError);
+    } else if (parseInt(userInput) >= 4000) {
+      $('.error_here').text(tooBig);
     } else {
       console.log(userInput);
     }

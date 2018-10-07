@@ -88,7 +88,7 @@ $(document).ready(function() {
       let results = convertToRomanNumeral(inputAsArray);
       let reversed = results.reverse();
       let romanNumeral = reversed.join('')
-      $('.result_here').text('We can represent the number ' + userInput + ' as ' + romanNumeral + ' in Roman Numerals.')
+      $('.result_here').text(romanNumeral)
     }
   });
 });

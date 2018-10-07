@@ -46,8 +46,11 @@ let convertToRomanNumeral = function(arrayMaxLength4) {
   //Convert the Hundreds column
   let hundredsArray = []
   let hundredsColumn = arrayMaxLength4.pop();
-  for (let count = hundredsColumn; count > 0; count -= 1) {
-    hundredsArray.splice(0, 0, 'C');
+  if (hundredsColumn < 4) {
+    for (let count = hundredsColumn; count > 0; count -= 1) {
+      hundredsArray.splice(0, 0, 'C');
+  } else if (hundredsColumn === 4) {
+    hundredsArray.splice(0, 0, 'CD');
   }
   convertedArray.push(hundredsArray.join(""));
 

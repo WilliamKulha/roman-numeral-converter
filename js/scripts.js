@@ -35,6 +35,11 @@ let convertToRomanNumeral = function(arrayMaxLength4) {
     }
   } else if (tensColumn === 4) {
     tensArray.splice(0, 0, 'XL')
+  } else if (tensColumn >= 5 && onesColumn < 9) {
+    tensArray.splice(0, 0, 'L')
+    for (let count = tensColumn - 5; count > 0; count -= 1) {
+      tensArray.splice(1, 0, 'X');
+    }
   }
   convertedArray.push(tensArray.join(""));
 

@@ -4,6 +4,8 @@
 let nanError = 'Please enter a number'
 let tooBig = 'Please enter a number smaller than 4000'
 
+
+
 //User Logic
 $(document).ready(function() {
   $('#input_form').submit(function(event) {
@@ -14,7 +16,8 @@ $(document).ready(function() {
     } else if (parseInt(userInput) >= 4000) {
       $('.error_here').text(tooBig);
     } else {
-      console.log(userInput);
+      let inputAsArray = userInput.split("").map(Number);
+      console.log(typeof(inputAsArray[2]));
     }
   });
 });

@@ -26,10 +26,18 @@ let convertToRomanNumeral = function(arrayMaxLength4) {
   //Convert the Hundreds column
   let hundredsArray = []
   let hundredsColumn = arrayMaxLength4.pop();
-  for (let count = hundredsColumn; count > 0; count -=1) {
+  for (let count = hundredsColumn; count > 0; count -= 1) {
     hundredsArray.splice(0, 0, 'C');
   }
   convertedArray.push(hundredsArray.join(""));
+
+  //Convert the Thousands column
+  let thousandsArray = []
+  let thousandsColumn = arrayMaxLength4.pop();
+  for (let count = hundredsColumn; count > 0; count -= 1) {
+    thousandsArray.splice(0, 0, 'M');
+  }
+  convertedArray.push(thousandsArray.join(""));
   console.log(convertedArray);
 }
 

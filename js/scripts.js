@@ -7,21 +7,29 @@ const tooBig = 'Please enter a number smaller than 4000'
 //Function for Conversion
 let convertToRomanNumeral = function(arrayMaxLength4) {
   let convertedArray = []
-  let onesArray = []
-  let tensArray = []
   //Convert the Ones Column
+  let onesArray = []
   let onesColumn = arrayMaxLength4.pop();
   for (let count = onesColumn; count > 0; count -= 1) {
     onesArray.splice(0, 0, 'I');
   }
   convertedArray.push(onesArray.join(""));
 
-  //Conver the Tens Column
+  //Convert the Tens Column
+  let tensArray = []
   let tensColumn = arrayMaxLength4.pop();
   for (let count = tensColumn; count > 0; count -= 1) {
     tensArray.splice(0,0, 'X');
   }
   convertedArray.push(tensArray.join(""));
+
+  //Convert the Hundreds column
+  let hundredsArray = []
+  let hundredsColumn = arrayMaxLength4.pop();
+  for (let count = hundredsColumn; count > 0; count -=1) {
+    hundredsArray.splice(0, 0, 'C');
+  }
+  convertedArray.push(hundredsArray.join(""));
   console.log(convertedArray);
 }
 

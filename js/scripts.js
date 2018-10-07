@@ -29,8 +29,12 @@ let convertToRomanNumeral = function(arrayMaxLength4) {
   //Convert the Tens Column
   let tensArray = []
   let tensColumn = arrayMaxLength4.pop();
-  for (let count = tensColumn; count > 0; count -= 1) {
-    tensArray.splice(0,0, 'X');
+  if (tensColumn < 4) {
+    for (let count = tensColumn; count > 0; count -= 1) {
+      tensArray.splice(0,0, 'X');
+    }
+  } else if (tensColumn === 4) {
+    tensArray.splice(0, 0, 'XL')
   }
   convertedArray.push(tensArray.join(""));
 
